@@ -1204,10 +1204,43 @@ body.active {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
     }
+
+    .swiper-progress {
+        display: none;
+    }
 }
 
 @media screen and (max-width: 390px) {
     .zfooter__main_logo {
         width: 100%;
     }
+}
+
+@keyframes scroll-animate {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 100%;
+    }
+}
+
+.swiper-progress {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 8;
+    height: 4px;
+    background: #8bcc00;
+    width: 0;
+
+}
+
+.swiper-progress.active {
+    animation-name: scroll-animate;
+    animation-duration: 5s;
+    animation-iteration-count: 1;
+    animation-timing-function: linear;
 }

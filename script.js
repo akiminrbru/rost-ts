@@ -1,19 +1,33 @@
 // Swiper main banner
 
+let progressBar = document.querySelector('.swiper-progress');
+
 const swiper = new Swiper('.swiperBanner', {
     direction: 'horizontal',
     loop: true,
-    // If we need pagination
+    autoplay: {
+        delay: 5000,
+    },
     pagination: {
       el: '.swiper-pagination-banner',
       clickable: true
     },
-  
+
     navigation: {
       nextEl: '.swiper-banner-next',
       prevEl: '.swiper-banner-prev',
     },
-  
+    
+    on: {
+        init: function() {
+            progressBar?.classList.add('active');
+        },
+    }
+});
+
+swiper.on('slideChange', function () {
+    progressBar?.classList.remove('active');
+    setTimeout(()=> progressBar?.classList.add('active'), 10)
 });
 
 // Бургер меню
