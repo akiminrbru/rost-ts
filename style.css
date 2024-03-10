@@ -1071,7 +1071,7 @@ body.active {
 
     .zcatalog__item {
         grid-template-rows: 165px 1fr;
-        max-width: auto;
+        max-width: 100%;
     }
 
     .zcatalog__item_content p {
@@ -1198,6 +1198,11 @@ body.active {
 
     .zheader__nav {
         max-width: 100%;
+    }
+
+    .zcatalog__list {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
