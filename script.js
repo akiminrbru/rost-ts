@@ -1,8 +1,7 @@
 // Swiper main banner
-
 let progressBar = document.querySelector('.swiper-progress');
 
-const swiper = new Swiper('.swiperBanner', {
+const swiperBanner = new Swiper('.swiperBanner', {
     direction: 'horizontal',
     loop: true,
     autoplay: {
@@ -25,7 +24,7 @@ const swiper = new Swiper('.swiperBanner', {
     }
 });
 
-swiper.on('slideChange', function () {
+swiperBanner.on('slideChange', function () {
     progressBar?.classList.remove('active');
     setTimeout(()=> progressBar?.classList.add('active'), 10)
 });
@@ -76,3 +75,23 @@ let back2 = document.querySelector('.zfooter__main_left');
 if (enter2 && place2 && back2) {
     transfer(enter2, place2, back2, '576', 'append', 'prepand');
 }
+
+
+// Слайдер парнеров
+
+const swiperPartners = new Swiper('.swiperPartners', {
+    enabled: false,
+    direction: 'horizontal',
+    slidesPerView: 'auto',
+    spaceBetween: 0,
+    navigation: {
+      nextEl: '.swiper-partners-next',
+      prevEl: '.swiper-partners-prev',
+    },
+    breakpoints: {
+        577: {
+            enabled: true,
+            spaceBetween: 56,
+        },
+    },
+});
