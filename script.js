@@ -91,7 +91,7 @@ const swiperPartners = new Swiper('.swiperPartners', {
     breakpoints: {
         577: {
             enabled: true,
-            spaceBetween: 56,
+            spaceBetween: 64,
         },
     },
 });
